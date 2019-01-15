@@ -7409,7 +7409,7 @@
 			};
 			name = AdHoc;
 		};
-		369210D3210FB4C000D1DB1A /* Demo Release */ = {
+		369210D3210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_DEADCODE_DEADSTORES = NO;
@@ -7476,9 +7476,9 @@
 					"-Werror",
 				);
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210D4210FB4C000D1DB1A /* Demo Release */ = {
+		369210D4210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D5477E9CCBB2B1B37661129D /* Pods-Demo.release.xcconfig */;
 			buildSettings = {
@@ -7523,9 +7523,9 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210D5210FB4C000D1DB1A /* Demo Release */ = {
+		369210D5210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0CF0BA897F9E79A01D6A2C66 /* Pods-Tests-IntegrationTests.release.xcconfig */;
 			buildSettings = {
@@ -7568,9 +7568,9 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210D6210FB4C000D1DB1A /* Demo Release */ = {
+		369210D6210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4621B720EE8A9B65FFFE3632 /* Pods-Tests-UnitTests.release.xcconfig */;
 			buildSettings = {
@@ -7614,9 +7614,9 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210D7210FB4C000D1DB1A /* Demo Release */ = {
+		369210D7210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -7658,9 +7658,9 @@
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210D8210FB4C000D1DB1A /* Demo Release */ = {
+		369210D8210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -7709,9 +7709,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210D9210FB4C000D1DB1A /* Demo Release */ = {
+		369210D9210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -7760,9 +7760,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210DA210FB4C000D1DB1A /* Demo Release */ = {
+		369210DA210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -7812,9 +7812,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210DB210FB4C000D1DB1A /* Demo Release */ = {
+		369210DB210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -7864,9 +7864,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210DC210FB4C000D1DB1A /* Demo Release */ = {
+		369210DC210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -7919,9 +7919,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210DD210FB4C000D1DB1A /* Demo Release */ = {
+		369210DD210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -7972,9 +7972,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210DE210FB4C000D1DB1A /* Demo Release */ = {
+		369210DE210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -8023,9 +8023,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210DF210FB4C000D1DB1A /* Demo Release */ = {
+		369210DF210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -8074,9 +8074,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210E0210FB4C000D1DB1A /* Demo Release */ = {
+		369210E0210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -8126,9 +8126,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210E1210FB4C000D1DB1A /* Demo Release */ = {
+		369210E1210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -8170,9 +8170,9 @@
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210E2210FB4C000D1DB1A /* Demo Release */ = {
+		369210E2210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -8225,9 +8225,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210E3210FB4C000D1DB1A /* Demo Release */ = {
+		369210E3210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -8264,9 +8264,9 @@
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210E4210FB4C000D1DB1A /* Demo Release */ = {
+		369210E4210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -8316,9 +8316,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210E5210FB4C000D1DB1A /* Demo Release */ = {
+		369210E5210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -8371,9 +8371,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
-		369210E6210FB4C000D1DB1A /* Demo Release */ = {
+		369210E6210FB4C000D1DB1A /* AppleStoreDemo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -8413,7 +8413,7 @@
 				USES_XCTRUNNER = YES;
 				VALIDATE_PRODUCT = YES;
 			};
-			name = "Demo Release";
+			name = AppleStoreDemo;
 		};
 		4164B9AA1C9B658E006AE861 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -10027,7 +10027,7 @@
 			buildConfigurations = (
 				03F8B26D1C23976100FD184B /* Debug */,
 				03F8B26E1C23976100FD184B /* Release */,
-				369210E6210FB4C000D1DB1A /* Demo Release */,
+				369210E6210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210D2210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10038,7 +10038,7 @@
 			buildConfigurations = (
 				16CD2EA41B4077FC00E68495 /* Debug */,
 				16CD2EA51B4077FC00E68495 /* Release */,
-				369210D6210FB4C000D1DB1A /* Demo Release */,
+				369210D6210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210C2210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10049,7 +10049,7 @@
 			buildConfigurations = (
 				2D941D3E1B59C76A0016EFB4 /* Debug */,
 				2D941D3F1B59C76A0016EFB4 /* Release */,
-				369210DD210FB4C000D1DB1A /* Demo Release */,
+				369210DD210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210C9210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10060,7 +10060,7 @@
 			buildConfigurations = (
 				2D941D8D1B5D9E8C0016EFB4 /* Debug */,
 				2D941D8E1B5D9E8C0016EFB4 /* Release */,
-				369210D8210FB4C000D1DB1A /* Demo Release */,
+				369210D8210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210C4210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10071,7 +10071,7 @@
 			buildConfigurations = (
 				2DE12F0E1B59BE0100EA1BCF /* Debug */,
 				2DE12F0F1B59BE0100EA1BCF /* Release */,
-				369210DB210FB4C000D1DB1A /* Demo Release */,
+				369210DB210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210C7210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10082,7 +10082,7 @@
 			buildConfigurations = (
 				4164B9AA1C9B658E006AE861 /* Debug */,
 				4164B9AB1C9B658E006AE861 /* Release */,
-				369210E0210FB4C000D1DB1A /* Demo Release */,
+				369210E0210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210CC210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10093,7 +10093,7 @@
 			buildConfigurations = (
 				417404501BB084D3008A5DEA /* Debug */,
 				417404511BB084D3008A5DEA /* Release */,
-				369210D7210FB4C000D1DB1A /* Demo Release */,
+				369210D7210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210C3210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10104,7 +10104,7 @@
 			buildConfigurations = (
 				7EDE476E1CD2C3D00005E22B /* Debug */,
 				7EDE476F1CD2C3D00005E22B /* Release */,
-				369210E5210FB4C000D1DB1A /* Demo Release */,
+				369210E5210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210D1210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10115,7 +10115,7 @@
 			buildConfigurations = (
 				A50C3ADC1C19F00600612D90 /* Debug */,
 				A50C3ADD1C19F00600612D90 /* Release */,
-				369210E3210FB4C000D1DB1A /* Demo Release */,
+				369210E3210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210CF210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10126,7 +10126,7 @@
 			buildConfigurations = (
 				A50C3B0C1C19F55C00612D90 /* Debug */,
 				A50C3B0D1C19F55C00612D90 /* Release */,
-				369210E1210FB4C000D1DB1A /* Demo Release */,
+				369210E1210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210CD210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10137,7 +10137,7 @@
 			buildConfigurations = (
 				A50C3B751C1A29C500612D90 /* Debug */,
 				A50C3B761C1A29C500612D90 /* Release */,
-				369210E4210FB4C000D1DB1A /* Demo Release */,
+				369210E4210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210D0210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10148,7 +10148,7 @@
 			buildConfigurations = (
 				A75DA348192138F000D997A2 /* Debug */,
 				A75DA349192138F000D997A2 /* Release */,
-				369210D3210FB4C000D1DB1A /* Demo Release */,
+				369210D3210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210BF210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10159,7 +10159,7 @@
 			buildConfigurations = (
 				A76B199F1B79707700452CFA /* Debug */,
 				A76B19A01B79707700452CFA /* Release */,
-				369210D4210FB4C000D1DB1A /* Demo Release */,
+				369210D4210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210C0210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10170,7 +10170,7 @@
 			buildConfigurations = (
 				A76D7C171BB1CAB00000FA6A /* Debug */,
 				A76D7C181BB1CAB00000FA6A /* Release */,
-				369210DC210FB4C000D1DB1A /* Demo Release */,
+				369210DC210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210C8210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10181,7 +10181,7 @@
 			buildConfigurations = (
 				A77345001B7A93A10083EC8D /* Debug */,
 				A77345011B7A93A10083EC8D /* Release */,
-				369210DF210FB4C000D1DB1A /* Demo Release */,
+				369210DF210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210CB210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10192,7 +10192,7 @@
 			buildConfigurations = (
 				A77AA2A21B618C7700217B73 /* Debug */,
 				A77AA2A31B618C7700217B73 /* Release */,
-				369210DE210FB4C000D1DB1A /* Demo Release */,
+				369210DE210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210CA210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10203,7 +10203,7 @@
 			buildConfigurations = (
 				A7ABD65B1B702FD900A1223C /* Debug */,
 				A7ABD65C1B702FD900A1223C /* Release */,
-				369210D5210FB4C000D1DB1A /* Demo Release */,
+				369210D5210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210C1210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10214,7 +10214,7 @@
 			buildConfigurations = (
 				A7B463031C3D9C2200048423 /* Debug */,
 				A7B463041C3D9C2200048423 /* Release */,
-				369210E2210FB4C000D1DB1A /* Demo Release */,
+				369210E2210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210CE210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10225,7 +10225,7 @@
 			buildConfigurations = (
 				A7C8897A1B5EF5DE007A0E9C /* Debug */,
 				A7C8897B1B5EF5DE007A0E9C /* Release */,
-				369210D9210FB4C000D1DB1A /* Demo Release */,
+				369210D9210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210C5210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10236,7 +10236,7 @@
 			buildConfigurations = (
 				A7C8899A1B5F043B007A0E9C /* Debug */,
 				A7C8899B1B5F043B007A0E9C /* Release */,
-				369210DA210FB4C000D1DB1A /* Demo Release */,
+				369210DA210FB4C000D1DB1A /* AppleStoreDemo */,
 				369210C6210FB4B000D1DB1A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
