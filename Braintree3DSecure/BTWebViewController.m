@@ -10,9 +10,9 @@ static NSString *BTWebViewControllerPopupCloseDummyURLScheme = @"com.braintreepa
 
 @end
 
-@interface BTWebViewController () <UIWebViewDelegate, BTThreeDSecurePopupDelegate>
+@interface BTWebViewController () <WKNavigationDelegate, BTThreeDSecurePopupDelegate>
 
-@property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong) WKWebView *webView;
 
 @property (nonatomic, weak) id<BTThreeDSecurePopupDelegate> delegate;
 
@@ -31,7 +31,7 @@ static NSString *BTWebViewControllerPopupCloseDummyURLScheme = @"com.braintreepa
 - (instancetype)initWithRequest:(NSURLRequest *)request {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
-        self.webView = [[UIWebView alloc] init];
+        self.webView = [[WKWebView alloc] init];
         self.webView.accessibilityIdentifier = @"Web View";
         [self.webView loadRequest:request];
     }
@@ -60,7 +60,7 @@ static NSString *BTWebViewControllerPopupCloseDummyURLScheme = @"com.braintreepa
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.webView.delegate = self;
+    self.webView.navigationDelegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -75,7 +75,7 @@ static NSString *BTWebViewControllerPopupCloseDummyURLScheme = @"com.braintreepa
     [self updateNetworkActivityIndicatorForWebView:self.webView];
 }
 
-- (void)updateNetworkActivityIndicatorForWebView:(UIWebView *)webView {
+- (void)updateNetworkActivityIndicatorForWebView:(WKWebView *)webView {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:webView.isLoading];
 }
 
@@ -89,34 +89,37 @@ static NSString *BTWebViewControllerPopupCloseDummyURLScheme = @"com.braintreepa
 }
 
 
-#pragma mark UIWebViewDelegate
+#pragma mark WKWebViewDelegate
 
-- (BOOL)webView:(__unused UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(__unused UIWebViewNavigationType)navigationType {
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     NSURL *requestURL = request.URL;
     if ([self isURLPopupOpenLink:requestURL]) {
         [self openPopupWithURLRequest:request];
-        return NO;
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
     } else if ([self isURLPopupCloseLink:requestURL]) {
         [self informDelegateDidFinish];
-        return NO;
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
     }
     
-    return YES;
+    decisionHandler(WKNavigationActionPolicyAllow);
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView {
+- (void) webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
     [self updateNetworkActivityIndicatorForWebView:webView];
-    self.title = [self parseTitleFromWebView:webView];;
+    [self parseTitleFromWebView:webView];
+    decisionHandler(WKNavigationResponsePolicyAllow);
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
+- (void) webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
     [self updateNetworkActivityIndicatorForWebView:webView];
     [self prepareTargetLinks:webView];
     [self prepareWindowOpenAndClosePopupLinks:webView];
-    self.title = [self parseTitleFromWebView:webView];
+    [self parseTitleFromWebView:webView];
 }
 
-- (void)webView:(__unused UIWebView *)webView didFailLoadWithError:(__unused NSError *)error {
+- (void) webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
     if ([error.domain isEqualToString:@"WebKitErrorDomain"] && error.code == 102) {
         // Not a real error; occurs when webView:shouldStartLoadWithRequest:navigationType: returns NO
         return;
@@ -150,23 +153,25 @@ static NSString *BTWebViewControllerPopupCloseDummyURLScheme = @"com.braintreepa
 
 #pragma mark Web View Inspection
 
-- (NSString *)parseTitleFromWebView:(UIWebView *)webView {
-    return [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+- (void)parseTitleFromWebView:(WKWebView *)webView {
+    [webView evaluateJavaScript:@"document.title" completionHandler:^(NSString *title, NSError *error) {
+        self.title = title;
+    }];
 }
 
 
 #pragma mark Web View Popup Links
 
-- (void)prepareTargetLinks:(UIWebView *)webView {
+- (void)prepareTargetLinks:(WKWebView *)webView {
     NSString *js = [NSString stringWithFormat:@"var as = document.getElementsByTagName('a');\
                     for (var i = 0; i < as.length; i++) {\
                     if (as[i]['target']) { as[i]['href'] = '%@+' + as[i]['href']; }\
                     }\
                     true;", BTWebViewControllerPopupOpenDummyURLScheme];
-    [webView stringByEvaluatingJavaScriptFromString:js];
+    [webView evaluateJavaScript:js completionHandler:nil];
 }
 
-- (void)prepareWindowOpenAndClosePopupLinks:(UIWebView *)webView {
+- (void)prepareWindowOpenAndClosePopupLinks:(WKWebView *)webView {
     NSString *js = [NSString stringWithFormat:@"(function(window) {\
                     function FakeWindow () {\
                     var fakeWindow = {};\
@@ -181,7 +186,7 @@ static NSString *BTWebViewControllerPopupCloseDummyURLScheme = @"com.braintreepa
                     window.open = function (url) { window.location = '%@+' + absoluteUrl(url); return new FakeWindow(); };\
                     window.close = function () { window.location = '%@://'; };\
                     })(window)", BTWebViewControllerPopupOpenDummyURLScheme, BTWebViewControllerPopupCloseDummyURLScheme];
-    [webView stringByEvaluatingJavaScriptFromString:js];
+    [webView evaluateJavaScript:js completionHandler:nil];
 }
 
 - (BOOL)isURLPopupOpenLink:(NSURL *)URL {

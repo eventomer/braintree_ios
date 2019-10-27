@@ -73,10 +73,12 @@
     });
 }
 
-#pragma mark UIWebViewDelegate
+#pragma mark WKWebViewDelegate
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    if (navigationType == UIWebViewNavigationTypeFormSubmitted && [request.URL.path rangeOfString:@"authentication_complete_frame"].location != NSNotFound) {
+- (void) webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    NSURLRequest *request = [navigationAction request];
+
+    if (navigationAction.navigationType == WKNavigationTypeFormSubmitted && [request.URL.path rangeOfString:@"authentication_complete_frame"].location != NSNotFound) {
         
         NSString *jsonAuthResponse = [BTURLUtils dictionaryForQueryString:request.URL.query][@"auth_response"];
         BTJSON *authBody = [[BTJSON alloc] initWithValue:[NSJSONSerialization JSONObjectWithData:[jsonAuthResponse dataUsingEncoding:NSUTF8StringEncoding] options:0 error:NULL]];
@@ -89,13 +91,14 @@
 
         [self didCompleteAuthentication:authResponse];
 
-        return NO;
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
     } else {
-        return [super webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
+        return [super webView:webView decidePolicyForNavigationAction:navigationAction decisionHandler:decisionHandler];
     }
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+- (void) webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
     if ([error.domain isEqualToString:@"WebKitErrorDomain"] && error.code == 102) {
         // Not a real error; occurs when we return NO from webView:shouldStartLoadWithRequest:navigationType:
         return;
@@ -107,7 +110,7 @@
         if ([self.delegate respondsToSelector:@selector(threeDSecureViewController:didPresentErrorToUserForURLRequest:)]) {
             [self.delegate threeDSecureViewController:self didPresentErrorToUserForURLRequest:webView.request];
         }
-        [super webView:webView didFailLoadWithError:error];
+        [super webView:webView didFailNavigation:navigation withError:error];
     }
 }
 

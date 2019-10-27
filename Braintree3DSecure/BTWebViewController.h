@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-
+@import WebKit;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BTWebViewController : UIViewController
@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark Override Points for Subclasses
 
-- (BOOL)webView:(nonnull UIWebView *)webView shouldStartLoadWithRequest:(nonnull NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType __attribute__((objc_requires_super));
-- (void)webViewDidStartLoad:(nonnull UIWebView *)webView __attribute__((objc_requires_super));
-- (void)webViewDidFinishLoad:(nonnull UIWebView *)webView __attribute__((objc_requires_super));
-- (void)webView:(nonnull UIWebView *)webView didFailLoadWithError:(nonnull NSError *)error;
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler __attribute__((objc_requires_super));
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler __attribute__((objc_requires_super));
+- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation __attribute__((objc_requires_super));
+- (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error;
 
 @end
 
